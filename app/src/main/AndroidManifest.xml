@@ -1,0 +1,38 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="mlsdev.com.weather">
+
+    <application
+        android:name="com.mlsdev.weather.app.WeatherApp"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/MyTheme">
+
+        <activity
+            android:name="com.mlsdev.weather.ui.activity.MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.mlsdev.weather.ui.activity.DetailWeatherActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mlsdev.weather.ui.activity.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.mlsdev.weather.ui.activity.SettingsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/PrefFragTheme" />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="621b835fc8a5cf3079ceaed86148ab6c19cb5ee8" />
+    </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
+</manifest>
